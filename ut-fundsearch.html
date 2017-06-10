@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UX: Filter Design with a Data-Set</title>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/utfund.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/modernizr.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/jPages.min.js"></script>
+<script src="js/utData.js"></script>
+<script type="text/javascript" src="js/highcharts-v2.3.5.js"></script>
+<script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
+<script type="text/javascript" src="js/ut-fundsearch.js"></script>
+</head>
+<body>
+<div class=" main-container container"><div class=" row-fluid"><div class=" span12">
+<div id="utFundSearch">
+    <div class="page-module">
+        <div class="row-fluid">
+            <h2 class="span12 section-title">Funds Search</h2>
+        </div>
+        <!-- UT Search Filter -->
+        <div class="row-fluid ut-search-filter">
+            <h3 class="span12 section-title m-toggle">Filter By <span class="m-toggle-filter">Filter</span></h3>
+            <div class="filter-ctrls">
+                <div class="span4 marLeft0">
+                    <div class="ut-select">
+                        <select id="fundHouse"><option value="All Fund Houses">All Fund Houses</option></select>
+                        <span class="selectVal">All Fund Houses</span>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="ut-select">
+                        <select id="investCategory"><option value="All Investment Categories">All Investment Categories</option></select>
+                        <span class="selectVal">All Investment Categories</span>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="ut-select">
+                        <select id="region"><option value="All Regions">All Regions</option></select>
+                        <span class="selectVal">All Regions</span>
+                    </div>
+                </div>
+                
+                <div class='clearfix'></div>
+                
+                <div class="filter-subCtrls">
+                    <div class="span4 marLeft0">
+                        <div class="ut-select">
+                        <select id="riskProfile"><option value="All Risk Profiles">All Risk Profiles</option></select>
+                        <span class="selectVal">All Risk Profiles</span>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <div class="ut-select">
+                        <select id="currency"><option value="All Currencies">All Currencies</option></select>
+                        <span class="selectVal">All Currencies</span>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <div class="ut-select">
+                        <select id="investMedium"><option value="All Investment Mediums">All Investment Mediums</option></select>
+                        <span class="selectVal">All Investment Mediums</span>
+                        </div>
+                    </div>
+                    
+                    <label id="checkFocusFund" for="utFilterFocusFunds"><input id="utFilterFocusFunds" class="" type="checkbox"> Display Focus Funds First</label>
+                </div>
+                <div class="span12 toggle-filter">
+                    <a href="#" data-showless="- Show less filters" data-showmore="+ More Filters">+ More Filters</a>
+                </div>
+                <div class="span12 m-filter-btn">
+                    <button class='cancel-btn'>Clear All</button>
+                    <button class='apply-btn'>Apply Filter</button>
+                </div>
+            </div>
+        </div>
+        <!-- UT Search Filter -->
+        
+        <div class="row-fluid ut-utility">
+            <div id="legend"></div>
+            
+            <div id="toggleView">
+                <a href="#" class="ut-sortPrecent sort percent sortDesc"  data-key="percentage">Sort Percent</a>
+                <a href="#" class="ut-sortAlpha sort alpha"  data-key="fundName">Sort Alpha</a>
+                <a href="#" class="ut-listView toggle on" data-target="utListBody">List View</a>
+                <a href="#" class="ut-tableView toggle" data-target="utTableBody">Table View</a>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div id="utInfo"></div>
+            <table class="table table-nine-colm ut-fundsearch-table">
+               <thead class="hidden-mobile table-header no-before-th">
+                  <tr>
+                     <th rowspan="2" class="fund-name sort alpha" data-key="fundName"><span>Fund Name</span></th>
+                     <th rowspan="2" class="wid78 cellRight sort alpha" data-key="currency"><span>Currency</span></th>
+                     <th colspan="5" class="noBorder cellCenter sorter-false">Performance in %</th>
+                  </tr>
+                  <tr>
+                     <th class="wid78 cellRight sort num" data-key="threeMth"><span>3-mth</span></th>
+                     <th class="wid78 cellRight sort num" data-key="sixMth"><span>6-mth</span></th>
+                     <th class="wid78 cellRight sort num" data-key="oneYr"><span>1-yr</span></th>
+                     <th class="wid78 cellRight sort num" data-key="threeYr"><span>3-yr</span></th>
+                     <th class="wid78 cellRight sort num" data-key="threeYrsd"><span>3-yr SD</span></th>
+                  </tr>
+               </thead>
+               <tbody id='utTableBody'></tbody>
+            </table>
+            
+            <ul id="utListBody"></ul>
+            
+            <div class="pagination"></div>
+        </div>
+    </div>
+    <section class="ut-lightbox ut-lightbox-overlay">
+        <div class="lightbox-wrapper">
+            <div class="popup-header-btn">
+                <img src="images/lightbox-close-icon.png" alt="Close" class="ut-lightbox-closebtn">
+            </div>
+            
+            <div class="ut-loader"><span>Loading</span></div>
+            <div id="lightboxContent" data-status-text="Please try after sometime!">
+            </div>
+        </div>
+    </section>
+</div>
+
+
+ <script id="ut-modalPopupTemplate" type="text/x-handlebars-template">
+
+<h1>{{title}}</h1>
+<p class="fund-name">{{fundName}}
+    {{#isFocusFund}}
+    <span class="ut-badge">{{focusFund}}</span>
+    {{/isFocusFund}}
+</p>
+<h2>{{strategyHead}}</h2>
+<p>{{strategy}}</p>
+
+<h2>{{commentaryHead}}</h2>
+<ul>
+    {{#each commentary}}
+    <li>{{this.list}}</li>
+    {{/each}}
+</ul>
+<div class="fund-details">
+<h2>{{aboutHead}}</h2>
+<dl>
+    {{#each about}}
+    <dt>{{this.listTitle}}:</dt>
+    <dd>{{this.list}}</dd>
+    {{/each}}
+</dl>
+</div>
+
+<a href="{{buyNowURL}}" class="ut-detail-btn buy-now">{{buyTxt}}</a>
+
+<div class="clear-rule"></div>
+
+<h2>{{tabHead}}</h2>
+<div class="ut-tabs">
+    <ul>
+        {{#each tabs}}
+            {{#if @first}}
+                <li class="active" data-target="#{{this.tabId}}">{{this.tab}}</li>
+            {{else}}
+                <li data-target="#{{this.tabId}}">{{this.tab}}</li>
+            {{/if}}
+        {{/each}}
+    </ul>
+    
+    {{#each tabs}}
+        {{#if this.isChart}}
+        <div id="{{this.tabId}}" class="tab-content donutChart" {{#if @first}}style="display:block;{{/if}}">
+           <h3 class="head-m">{{this.tab}}</h3>
+            <div id="pieChart" style="height: 250px; width:250;"></div>
+        </div>
+        {{else}} 
+        <div id="{{this.tabId}}" class="tab-content">
+           <h3 class="head-m">{{this.tab}}</h3>
+            <dl>
+                {{#each this.tabContent}}
+                    <dt>{{this.label}}</dt>
+                    <dd>{{this.text}}</dd>
+                {{/each}}
+            </dl>
+        </div>
+        {{/if}}
+    {{/each}}
+</div>
+<div class="ut-accordion">
+    <a href="#{{accordion.button1.buttonId}}" data-toggle="collapse" class="accordion collapsed">
+        {{accordion.button1.text}}
+    </a>
+    
+    <div id="{{accordion.button1.buttonId}}" class="acc-desc collapse">
+        <h2>{{accordion.button1.section1.sectionHead}}</h2>
+        <table class="table-bordered table-condensed" border="0" width="100%">
+            <thead>
+            <tr>
+                <th></th>
+                <th class="w160">{{accordion.button1.section1.tableHead.returnTitle}}</th>
+                <th class="w160">{{accordion.button1.section1.tableHead.benchmarkTitle}}</th>
+            </tr>
+            </thead>
+            <tbody>
+                {{#accordion.button1.section1.tableData}}
+                <tr>
+                    <td>{{time}}</td>
+                    <td class="w160" data-title="{{accordion.button1.section1.tableHead.returnTitle}}">{{return}}</td>
+                    <td class="w160" data-title="{{accordion.button1.section1.tableHead.benchmarkTitle}}">{{benchmark}}</td>
+                </tr>
+                {{/accordion.button1.section1.tableData}}
+            </tbody>
+        </table>
+        
+        <h2>{{accordion.button1.section2.sectionHead}}</h2>
+        <div id="timelineChart" style="height: 250px; width:250;"></div>
+        
+        <h2>{{accordion.button1.section3.sectionHead}}</h2>
+        
+        <table class="table-bordered dividend-table border-all" width="100%">
+            <tbody>
+               <tr>
+                    <th class="row-head">{{accordion.button1.section3.tableHead1}}</th>
+                    {{#accordion.button1.section3.tableData1}}
+                    <td class="align-right">{{date}}</td>
+                    {{/accordion.button1.section3.tableData1}}
+                </tr>
+                <tr>
+                    <th class="row-head">{{accordion.button1.section3.tableHead2}}</th>
+                    {{#accordion.button1.section3.tableData2}}
+                    <td class="align-right">{{dividend}}</td>
+                    {{/accordion.button1.section3.tableData2}}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <a href="#{{accordion.button2.buttonId}}" data-toggle="collapse" class="accordion collapsed">{{accordion.button2.text}}</a>
+    <div id="{{accordion.button2.buttonId}}" class="acc-desc collapse">
+        <h2>{{accordion.button2.section1.sectionHead}}</h2>
+        <dl>
+           {{#accordion.button2.section1.sectionList}}
+            <dt>{{label}}</dt>
+            <dd>{{text}}</dd>
+           {{/accordion.button2.section1.sectionList}}
+        </dl>
+
+        <a href="{{buyNowURL}}" class="ut-detail-btn buy-now">{{buyTxt}}</a>
+       
+        <h2>{{accordion.button2.section2.sectionHead}}</h2>
+        <ul class="ut-docs">
+           {{#accordion.button2.section2.buttonList}}
+            <li class="ut-pdf"><a href="{{docURL}}" class="doc-download">{{docTxt}}</a></li>
+           {{/accordion.button2.section2.buttonList}}
+        </ul>
+        <p class="policy-terms">{{policy}}</p>
+    </div>
+</div>
+<div class="ut-contact">
+    <a href="{{contactURL}}" class="ut-detail-btn">{{contactTxt}}</a>
+</div>
+</script>
+</div></div></div>
+</body>
+</html>

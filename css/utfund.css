@@ -1,0 +1,778 @@
+
+/* UT Fund Search Rules */
+
+#utFundSearch #utListBody {
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    overflow:hidden;
+    min-height:0!important;
+}
+#utFundSearch #utListBody li {
+    float:left;
+    position:relative;
+    width:140px;
+    height:140px;
+    margin: 0 20px 20px 0;
+    padding:12px 12px 0 12px;
+    border:1px solid #e1e1e1;
+    box-sizing: border-box;
+    background:#f7f7f7;
+}
+#utFundSearch #utListBody li:hover {
+    border:1px solid #dfdfdf;
+    background:#ececec;
+    -webkit-transition: background  0.4s ease-in-out, border  0.4s ease-in-out;
+    transition: background  0.4s ease-in-out, border  0.4s ease-in-out;
+    cursor:pointer;
+}
+#utFundSearch #utListBody li:hover label {
+    cursor:pointer;
+}
+#utFundSearch #utListBody li:nth-child(6n) {
+    margin-right:0;
+}
+#utFundSearch #utListBody li p {
+    position:absolute;
+    bottom:10px;
+    margin:0;
+}
+#utFundSearch #utListBody li a,
+#utFundSearch #utListBody li p > span {
+    display:block;
+}
+#utFundSearch #utListBody li a,
+#utFundSearch #utListBody li a:hover,
+#utFundSearch #utListBody li a:visited {
+    height:140px;
+    color: #000;
+    text-decoration:none;
+    cursor:pointer;
+}
+#utFundSearch #utListBody li a > label {
+    line-height:1.2;
+    font-weight:600;height: 68px;
+    overflow: hidden;
+    font-size: 12px;
+}
+#utFundSearch #utListBody li a > p {
+    color:#229922;
+    font-size:16px;
+    font-weight:800;
+    line-height:1;
+}
+#utFundSearch #utListBody li a > p > span {
+    margin-top: 3px;
+    color:#c0c0c0;
+    font-size:11px;
+    font-weight:normal;
+    line-height:1;
+}
+#utFundSearch .ut-fundsearch-table {
+    margin-bottom:0;
+}
+#utFundSearch .ut-fundsearch-table .wid78 {
+    width:78px!important;
+    cursor:pointer;
+}
+#utFundSearch .ut-fundsearch-table .cellLeft,
+#utFundSearch .ut-fundsearch-table .cellRight {
+    padding:16px 10px;        
+}
+#utFundSearch .ut-fundsearch-table .cellLeft {
+    text-align:left!important;        
+}
+#utFundSearch .ut-fundsearch-table .cellCenter {
+    text-align:center!important;        
+}
+#utFundSearch .ut-fundsearch-table .cellRight {
+    text-align:right!important;        
+}
+#utFundSearch .ut-fundsearch-table .cellGreen {
+    color:#229922!important;        
+}
+#utFundSearch .ut-fundsearch-table .cellRed {
+    color:#ee1818;!important;     
+}
+#utFundSearch .ut-fundsearch-table th {
+    border-top:none!important;
+}
+#utFundSearch .ut-fundsearch-table th[rowspan] {
+    height:60px;
+    vertical-align:top!important;
+}
+#utFundSearch .ut-fundsearch-table th[colspan] {
+    padding:0!important;
+}
+#utFundSearch .ut-fundsearch-table .noBorder {
+    border:none;
+}
+#utFundSearch .ut-fundsearch-table thead tr > th.sort {
+    outline:none;
+    cursor:pointer;
+}
+#utFundSearch .ut-fundsearch-table thead tr > th.sort span {
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 0;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+#utFundSearch .ut-fundsearch-table thead tr > th.sort span::after {
+    content: url('../images/arrw-default.png');
+    position: relative;
+    top: 0;
+    left: 10px;
+} 
+#utFundSearch .ut-fundsearch-table thead tr > th.sort.sortAsce span::after {
+    content: url('../images/arrw-up.png');
+}
+#utFundSearch .ut-fundsearch-table thead tr > th.sort.sortDesc span::after {
+    content: url('../images/arrw-down.png');
+}
+#utFundSearch .ut-fundsearch-table tbody tr > th,
+#utFundSearch .ut-fundsearch-table tbody tr > td {
+   color:#000;
+   font-size:14px!important;
+   font-weight:400!important; 
+}
+#utFundSearch .ut-fundsearch-table tbody tr > td:last-child {
+   border-right:none!important; 
+}
+#utFundSearch .ut-fundsearch-table thead tr > th,
+#utFundSearch .ut-fundsearch-table tbody tr > td.mDash {
+   color:#909090!important; 
+}
+#utFundSearch .ut-fundsearch-table thead tr > th {
+   padding:0!important;
+   font-size:13px;
+}
+#utFundSearch .ut-fundsearch-table tbody tr {
+   cursor:pointer;
+}
+#utFundSearch .pagination > a, #utFundSearch .pagination > span {
+    float: left;
+    height: 30px !important;
+    min-width: 30px !important;
+/*    margin-left: -1px !important;*/
+    padding: 0px !important;
+    text-align: center;
+    line-height: 32px;
+    color: #100f0f;
+    font-weight: 700;
+    border: 1px solid #ccc5c5;
+    border-right:none;
+    text-decoration:none;
+} 
+#utFundSearch .pagination > a.jp-next {
+    border-right:1px solid #ccc5c5;
+}
+#utFundSearch .pagination > span {
+    display:none;
+}
+#utFundSearch .pagination > a {
+    cursor:pointer;
+}
+#utFundSearch .pagination > a:hover {
+    color: #cf0000;
+}
+#utFundSearch .pagination > a.jp-current {
+    background-color: #f5f5f5!important;
+    color: #7d0000!important;
+    cursor:default;
+}
+#utFundSearch .pagination > a.jp-disabled {
+    background-color: #fff!important;
+    color: #ccc5c5!important;
+    cursor:default;
+}
+#utFundSearch .pagination > a.jp-next,
+#utFundSearch .pagination > a.jp-previous {
+    cursor:pointer;
+}
+#utFundSearch .pagination > a.jp-next,
+#utFundSearch .pagination > a.jp-previous,
+#utFundSearch #toggleView .ut-tableView,
+#utFundSearch #toggleView .ut-listView,
+#utFundSearch a.sort {
+    font-size:0;
+    color:#fff;
+}
+#utFundSearch #toggleView .ut-tableView,
+#utFundSearch #toggleView .ut-listView {
+    margin-left:9px;
+}
+#utFundSearch .pagination > a.jp-next::before,
+#utFundSearch .pagination > a.jp-previous::before {
+    position:relative;
+    top:5px;
+}
+#utFundSearch .pagination > a.jp-next::before {
+    content:url('../images/icn-arrow-black-right.png');
+}
+#utFundSearch .pagination > a.jp-previous::before {
+    content:url('../images/icn-arrow-black-left.png');
+}
+#utFundSearch .pagination > a.jp-next.jp-disabled:before,
+#utFundSearch .pagination > a.jp-previous.jp-disabled:before {
+    cursor:default;
+}
+#utFundSearch .pagination > a.jp-next.jp-disabled:before {
+    content:url('../images/icn-arrow-gray-right.png');
+} 
+#utFundSearch .pagination > a.jp-previous.jp-disabled:before {
+    content:url('../images/icn-arrow-gray-left.png');
+}
+#utFundSearch #toggleView .ut-tableView,
+#utFundSearch #toggleView .ut-listView {
+    display:inline-block;
+    cursor:pointer;
+    width:20px;
+    height:20px;
+} 
+#utFundSearch #toggleView .ut-tableView.on,
+#utFundSearch #toggleView .ut-listView.on {
+    cursor:default;
+}
+#utFundSearch #toggleView .ut-tableView {
+    background:url('../images/ut-table-icon-off.png') 0 1px no-repeat;
+}
+#utFundSearch #toggleView .ut-listView {
+    background:url('../images/ut-list-icon-off.png') no-repeat;
+}
+#utFundSearch #toggleView .ut-tableView:hover,
+#utFundSearch #toggleView .ut-tableView.on {
+    background:url('../images/ut-table-icon-on.png') 0 1px no-repeat;
+    -webkit-transition: background-image 0.4s ease-in-out;
+    transition: background-image 0.4s ease-in-out;
+}
+#utFundSearch #toggleView .ut-listView:hover,
+#utFundSearch #toggleView .ut-listView.on {
+    background:url('../images/ut-list-icon-on.png') no-repeat;
+    -webkit-transition: background-image 0.4s ease-in-out;
+    transition: background-image 0.4s ease-in-out;
+}
+#utFundSearch a.sort,
+#utFundSearch a.ut-tableView,
+#utFundSearch a.ut-listView {
+    display:inline-block;
+}
+#utFundSearch a.sort.alpha {
+    border-right:1px solid #909090;
+    padding-right:19px;
+}
+#utFundSearch a.sort.percent {
+    margin-right:19px;
+}
+#utFundSearch a.sort.alpha,
+#utFundSearch a.sort.percent {
+    display:inline-block;
+    cursor:pointer;
+    width:20px;
+    height:20px;
+}
+#utFundSearch a.sort.alpha {
+    width:22px;
+    background:url('../images/ut-alpha-sortDesc-off.png') no-repeat;
+}
+#utFundSearch a.sort.percent {
+    width:26px;
+    background:url('../images/ut-percent-sortDesc-off.png') no-repeat;
+}
+#utFundSearch a.sort.alpha:hover,
+#utFundSearch a.sort.alpha.sortDesc {
+    background:url('../images/ut-alpha-sortDesc-on.png') no-repeat;
+    -webkit-transition: background-image 0.4s ease-in-out;
+    transition: background-image 0.4s ease-in-out;
+}
+#utFundSearch a.sort.alpha.sortAsce {
+    background:url('../images/ut-alpha-sortAsce-on.png') no-repeat;
+    -webkit-transition: background-image 0.4s ease-in-out;
+    transition: background-image 0.4s ease-in-out;
+}
+#utFundSearch a.sort.percent:hover,
+#utFundSearch a.sort.percent.sortDesc {
+    background:url('../images/ut-percent-sortDesc-on.png') no-repeat;
+    -webkit-transition: background-image 0.4s ease-in-out;
+    transition: background-image 0.4s ease-in-out;
+}
+#utFundSearch a.sort.percent.sortAsce {
+    background:url('../images/ut-percent-sortAsce-on.png') no-repeat;
+    -webkit-transition: background-image 0.4s ease-in-out;
+    transition: background-image 0.4s ease-in-out;
+}
+#utFundSearch .showTable a.sort {
+    display:none;
+}
+#utFundSearch h2.section-title {
+    font-weight: 400;
+}
+#utFundSearch h3.section-title {
+    margin: 0 0 10px 0;
+    font-weight: bolder;
+    line-height: 1.8;
+    padding: 0;
+}
+#utFundSearch h3.section-title .m-toggle-filter {display:none!important;}   
+#utFundSearch .ut-select {
+    position:relative;
+    width: 100%;
+    height: 36px;
+    display: inline-block;
+    overflow: hidden;
+    border: 1px solid #CBC6C6;
+    background: url(../images/selectarrow.png) no-repeat right;
+}
+#utFundSearch .ut-select select {
+    position:absolute;
+    z-index:2;
+    width: 100%;
+    height: 36px;
+    padding: 2px 7px;
+    font-size: 14px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    line-height: normal;
+    outline: none;
+    cursor: pointer;
+    opacity: 0;
+    _noFocusLine: expression(this.hideFocus=true);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+}
+#utFundSearch .ut-select select + span {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+}
+#utFundSearch .filter-ctrls .span12,
+#utFundSearch .filter-ctrls input[type="checkbox"] {
+    margin-left: 0;
+}
+#utFundSearch .filter-ctrls input[type="checkbox"] {
+    vertical-align: sub;
+} 
+#utFundSearch .ut-search-filter .span4 {height:36px!important;margin-bottom:16px;}
+#utFundSearch .ut-search-filter .span4.marLeft0 {margin-left:0;}
+#utFundSearch .ut-search-filter .filter-subCtrls {display:none;transition: all 2sec ease;}
+#utFundSearch .ut-search-filter .filter-subCtrls .span4 {margin-bottom:18px;}
+#utFundSearch .ut-search-filter .filter-ctrls .span12 label {width:180px;margin-bottom:9px;cursor:pointer;}
+#utFundSearch .ut-search-filter .filter-ctrls .toggle-filter {
+    min-height:19px;
+    margin-top: 17px;
+    font-size: 12px;
+}
+#utFundSearch .ut-search-filter .filter-ctrls .toggle-filter a,
+#utFundSearch .ut-search-filter .filter-ctrls .toggle-filter a:visited {font-weight:800;color:#EE1818;text-decoration:none;}
+#utFundSearch .ut-utility {
+    margin:10px 0 16px 0;
+}
+#utFundSearch .ut-utility #legend,
+#utFundSearch .ut-utility #toggleView {
+    line-height:1;
+    font-size:19px;
+    font-weight:bold;
+}
+#utFundSearch .ut-utility #legend {
+    float:left;
+    padding-top:17px;
+}
+#utFundSearch .ut-utility #toggleView {
+    float:right;
+}
+#utFundSearch .pagination {
+    clear:both!important;
+    padding: 0;
+    height: 32px;
+}
+#utFundSearch .pagination.ut-list {
+    margin-top:-2px;
+}
+#utFundSearch .pagination.ut-table {
+    margin-top:20px;
+}
+#utFundSearch .filter-ctrls .m-filter-btn,
+#utFundSearch #utInfo,
+#utFundSearch .filter-ctrls .m-filter-btn {display:none;}
+#utFundSearch #utListBody .ut-focusfund::after {
+    content:url(../images/ut-list-focusfundbadge.png);
+    position:relative;
+    top:-153px;
+    left:-12px;
+    cursor:pointer;
+}
+#utFundSearch .ut-badge {
+    display: inline-block;
+    position: relative;
+    left: 18px;
+    top: -3px;
+    padding: 0 6px;
+    line-height: 1.4;
+    background: #f5a623;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+#utFundSearch .fund-name .ut-badge {
+    left:4px;
+    top:0;
+}
+#utFundSearch .filter-subCtrls #checkFocusFund {
+    clear:both;
+    width: 200px;font-size: 12px;
+}
+#utFundSearch .ut-lightbox-overlay {
+    display:none;
+    position:fixed;
+    z-index: 99999;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background:#464646;
+    overflow: scroll;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper {
+    position:relative;
+    width:780px;
+    min-height: 300px;
+    margin:95px auto!important;
+    padding:24px 24px 32px 24px;
+    box-sizing: border-box;
+    background:#fff;
+    -webkit-box-shadow:0px 0px 24px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow:0px 0px 24px 0px rgba(0, 0, 0, 0.75);
+    box-shadow:0px 0px 24px 0px rgba(0, 0, 0, 0.75);
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper h1 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight:700;
+    line-height: 1;
+    margin:32px 0 16px 0;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight:700;
+    line-height: 1;
+    margin:20px 0;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper p,
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper ul li,
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper dl,
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper dl {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 15px;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper ul li {
+    padding:2px;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper dl,
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper dl {
+    overflow:auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper .fund-details dt,
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper .fund-details dd,
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper dt,
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper dd {
+	flex:0 0 25%;
+    box-sizing: border-box;
+    margin:0;
+    padding-bottom:8px;
+    font-weight:400;vertical-align: top;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper .fund-details dd {
+    font-weight:900;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper dd {
+    float:left;
+    width:25%;
+    margin:0;
+    font-weight:700;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper p.fund-name {
+    color:#c0c0c0;
+    font-size: 14px;
+}
+#utFundSearch .ut-lightbox-overlay a.ut-detail-btn,
+#utFundSearch .ut-lightbox-overlay a.ut-detail-btn:hover,
+#utFundSearch .ut-lightbox-overlay a.ut-detail-btn:active {
+    display:block;
+    clear:both;
+    width:144px;
+    height:40px;
+    line-height:2.8;
+    text-align:center;
+    background: #ff3333;
+    border: 1px solid #ee1818;
+    box-sizing: border-box;
+    color:#fff;
+    border-radius: 4px;
+    outline:none;
+    text-decoration:none;
+}
+#utFundSearch .ut-lightbox-overlay a.ut-detail-btn {
+    margin-top:24px;
+    margin-bottom:0; 
+}
+#utFundSearch .ut-lightbox-overlay .ut-contact a.ut-detail-btn {
+    margin-top:32px;
+    margin-bottom:0; 
+}
+#utFundSearch .popup-header-btn {
+    text-align:right;   
+}
+#utFundSearch .popup-header-btn .ut-lightbox-closebtn {
+    margin:0 0 25px;
+    cursor:pointer;
+}
+#utFundSearch #lightboxContent .ut-details-loadErr {
+    font-size: 18px;
+    color: #909090;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 6%;
+}
+#utFundSearch #lightboxContent .ut-tabs {
+    margin-bottom:32px;
+}
+#utFundSearch #lightboxContent .ut-tabs ul {
+    margin:0 0 32px 0;
+    padding:0;
+    list-style-type:none;
+}
+#utFundSearch #lightboxContent .ut-tabs li {
+    display:inline-block;
+    margin-right:10px;
+    font-size:16px;
+    font-weight:700;
+    color:#909090;
+    cursor:pointer;
+}
+#utFundSearch #lightboxContent .ut-tabs li.active,
+#utFundSearch #lightboxContent .ut-tabs li:hover {
+    border-bottom:2px solid #ff3333;
+    color:#ff3333;
+}
+#utFundSearch #lightboxContent .tab-content, 
+#utFundSearch #lightboxContent .tab-content .head-m {
+    display:none;
+}
+#utFundSearch .ut-accordion .accordion,
+#utFundSearch .ut-accordion .accordion:hover,
+#utFundSearch .ut-accordion .accordion:active {
+    display:block;
+    margin:0;
+    background:#ff5544;
+    font-size:24px;
+    font-weight:700;
+    cursor:pointer;
+    padding:0;
+    color:#fff;
+    line-height:2.6;
+    text-decoration:none;
+}
+#utFundSearch .ut-accordion .accordion::before {
+    content:url(../images/ut-collapse-ico.png);
+    position: relative;
+    top:6px;
+    margin-left:14px;
+    margin-right:10px;
+}
+#utFundSearch .ut-accordion .accordion.collapsed {
+  background:#f7f7f7;
+    color:#000;
+}
+#utFundSearch .ut-accordion .accordion.collapsed::before {
+    content:url(../images/ut-expand-ico.png);
+}
+#utFundSearch .ut-accordion .acc-desc {
+    margin-bottom:16px;
+}
+#utFundSearch .ut-accordion table.table-bordered {
+    margin-bottom:16px;
+}
+#utFundSearch .ut-accordion table.table-bordered thead tr th {
+    border-bottom: 2px solid #ff3333;
+    font-size:14px;
+}
+#utFundSearch .ut-accordion table.table-bordered tbody tr td {
+    border-left:0;
+    padding:0;
+    vertical-align:middle;
+    font-weight:900;
+    border-bottom:1px solid #dcdcdc;
+    font-size:16px;
+}
+#utFundSearch .ut-accordion table.table-bordered thead tr th.w160,
+#utFundSearch .ut-accordion table.table-bordered tbody tr td.w160 {
+    width:144px;
+    padding:0 10px;
+    text-align:right;
+}
+#utFundSearch .ut-accordion table.border-all {
+    border: 1px solid #dcdcdc!important;
+    border-width:1px 1px 0 0!important;
+    border-radius:0;
+}
+#utFundSearch .ut-accordion table.table-bordered.border-all tbody tr th,
+#utFundSearch .ut-accordion table.table-bordered.border-all tbody tr td {
+    padding:0 10px;
+    height: auto;
+    line-height: 2;
+    border: 1px solid #dcdcdc!important;
+    border-width: 0 0 1px 1px!important;
+    color:#000;
+}
+#utFundSearch .ut-accordion table.table-bordered.border-all thead tr th {
+    border-bottom: 1px solid #dcdcdc!important;    
+}
+#utFundSearch .ut-accordion table.table-bordered.border-all tbody tr td {
+    border: 1px solid #dcdcdc;
+    border-width: 0 0 0 1px;
+} 
+#utFundSearch .ut-accordion table.border-all tr th.row-head {
+    text-align:left;
+    padding:0 1px;
+    border-left:0;
+    background:#f7f7f7;
+    font-weight:400;
+} 
+#utFundSearch .ut-accordion table.border-all tr .align-right {
+    text-align:right;
+}
+#utFundSearch .ut-accordion .ut-docs {
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    overflow:auto;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper .ut-docs li {
+    display:inline-block;
+    width:360px;
+    height:40px;
+    margin-bottom:16px;
+    background:#f7f7f7;
+    border-bottom:1px solid #e7e7e7;
+    box-sizing:border-box;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper .ut-docs li:nth-last-of-type(-n+2) {
+    margin-bottom:0;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper .ut-docs li:nth-child(odd) {
+    float:left;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper .ut-docs li:nth-child(even) {
+    float:right;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper .ut-docs li.ut-pdf {
+    background:#f7f7f7 url(../images/ut-pdf-ico.png) no-repeat;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper .ut-docs li.ut-pdf a.doc-download {
+    display:block;
+    padding-left: 57px;
+    line-height: 2.4;
+    text-decoration:none;
+    color:#000;
+    font-weight:700;
+    background:url(../images/ut-download-ico.png) right 7px no-repeat;
+}
+#utFundSearch .ut-lightbox-overlay .lightbox-wrapper p.policy-terms {
+    padding-top:16px;
+    padding-bottom:32px;
+    color:#979797;
+    font-size:14px;
+    border-bottom:2px solid #eeeeee;
+    
+}
+.no-scroll {
+    overflow:hidden;   
+}
+.clear-rule {
+    clear:both;
+}
+.ut-loader{
+    position: relative;
+    margin: 10% auto;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    -webkit-animation: loading 1s linear infinite alternate;
+    -moz-animation: loading 1s linear infinite alternate;
+    animation: loading 1s linear infinite alternate; 
+}
+.ut-loader span {
+    position: absolute;
+    top: -9px;
+    left: -62px;
+    font-size:16px;
+    font-weight:700;
+    color:#c0c0c0;
+}
+
+@-webkit-keyframes loading{
+    0%{
+        background-color: rgba(0,0,0, 1);
+        box-shadow: 12px 0px 0px 0px rgba(0,0,0,0.2), 
+                    24px 0px 0px 0px rgba(0,0,0,0.2);
+      }
+    25%{ 
+        background-color: rgba(0,0,0, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(0,0,0,2), 
+                    24px 0px 0px 0px rgba(0,0,0,0.2);
+    }
+    75%{ background-color: rgba(0,0,0, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(0,0,0,0.2), 
+                    24px 0px 0px 0px rgba(0,0,0,1);
+      }
+}
+
+@-moz-keyframes loading{
+   0%{
+        background-color: rgba(0,0,0, 1);
+        box-shadow: 12px 0px 0px 0px rgba(0,0,0,0.2), 
+                    24px 0px 0px 0px rgba(0,0,0,0.2);
+      }
+    25%{ 
+        background-color: rgba(0,0,0, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(0,0,0,2), 
+                    24px 0px 0px 0px rgba(0,0,0,0.2);
+    }
+    75%{ background-color: rgba(0,0,0, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(0,0,0,0.2), 
+                    24px 0px 0px 0px rgba(0,0,0,1);
+      }
+}
+
+@keyframes loading{
+   0%{
+        background-color: rgba(0,0,0, 1);
+        box-shadow: 12px 0px 0px 0px rgba(0,0,0,0.2), 
+                    24px 0px 0px 0px rgba(0,0,0,0.2);
+      }
+    25%{ 
+        background-color: rgba(0,0,0, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(0,0,0,2), 
+                    24px 0px 0px 0px rgba(0,0,0,0.2);
+    }
+    75%{ background-color: rgba(0,0,0, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(0,0,0,0.2), 
+                    24px 0px 0px 0px rgba(0,0,0,1);
+      }
+}
+#ut-modalPopupTemplate { display:none; }
+/* UT Fund Search Rules */
